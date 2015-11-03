@@ -36,35 +36,23 @@ class PageController extends Controller
         $form->handleRequest($request);
 
         if($form->isValid()) {
-            // perform some action, such as saving the enquiry to the database or sending the email
+            $message = \Swift_Message::newInstance()
+                ->setSubject('Contact enquiry from nickblog')
+                ->setFrom('enquiries@nickblog.vm')
+                ->setTo('nickdunnblog@gmail.com')
+                ->setBody($this->renderView('BloggerBlogBundle:Page:contactEmail.txt.twig', array('enquiry' => $enquiry)));
+            $this->get('mailer')->send($message);
 
-            return $this->redirectToRoute('enquiry_success');
+            // $this->get('session')->setFlash('blogger-notice', 'Your contact enquiry was successfully sent. Thank you!');
+
+            // Redirect - This is important to prevent users re-posting
+            // the form if they refresh the page
+            return $this->redirect($this->generateUrl('BloggerBlogBundle_contact'));
 
         }
 
         return $this->render('BloggerBlogBundle:Page:contact.html.twig', array(
             'form' => $form->createView(),
         ));
-
-//        $form = $this->createFormBuilder(new EnquiryType(), $enquiry);
-//
-//        $request = $this->getRequest();
-//        if($request->getMethod() == 'POST') {
-//            $form->bindRequest($request);
-//
-//            if($form->isValid()) {
-//                // Perform some action, such as sending an email
-//
-//                // Redirect - This is important to prevent users re-posting
-//                // the form if they refresh the page
-//
-//                return $this->redirect($this->generateUrl('BloggerBlogBundle_contact'));
-//            }
-//        }
-//
-//
-//        return $this->render('BloggerBlogBundle:Page:contact.html.twig', array(
-//            'form' => $form->createView()
-//        ));
     }
 }

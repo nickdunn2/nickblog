@@ -84,7 +84,7 @@ class Enquiry
         $metadata->addPropertyConstraint('name', new NotBlank());
 
         $metadata->addPropertyConstraint('email', new NotBlank());
-        $metadata->addPropertyConstraint('email', new Email());
+        $metadata->addPropertyConstraint('email', new Email(array('message' => 'Please provide a valid email address.')));
 
         $metadata->addPropertyConstraint('subject', new NotBlank());
     }
