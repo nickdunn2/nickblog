@@ -1,0 +1,53 @@
+{# src/Blogger/BlogBundle/Resources/views/Page/index.html.twig #}
+
+{# 6.7 Create sidebar widgets -- http://prideparrot.com/blog/archive/2014/4/blog_template_using_twitter_bootstrap3_part1 #}
+{% extends 'BloggerBlogBundle::layout.html.twig' %}
+
+{% block body %}
+    <h1>Latest Posts</h1>
+
+    <article>
+        <h2><a href="singlepost.html">Most recent post headline here</a></h2>
+
+        <div class="row">
+            <div class="group1 col-sm-6 col-md-6">
+                <span class="glyphicon glyphicon-folder-open"></span>  <a href="#">Category</a>
+                <span class="glyphicon glyphicon-bookmark"></span> <a href="#">Tag1</a>,
+                <a href="#">Tag2</a>, <a href="#">Tag3</a>
+            </div>
+            <div class="group2 col-sm-6 col-md-6">
+                <span class="glyphicon glyphicon-pencil"></span> <a href="singlepost.html#comments">XX Comments</a>
+                <span class="glyphicon glyphicon-time"></span> Oct. 7, 2015
+            </div>
+        </div>
+
+        <hr>
+
+        <img src="http://placehold.it/900x300" class="img-responsive">
+
+        <br />
+
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?</p>
+
+        <p>Ad dolore dignissimos asperiores dicta facere optio quod commodi nam tempore recusandae. Rerum sed nulla eum vero expedita ex delectus voluptates rem at neque quos facere sequi unde optio aliquam!</p>
+
+        <p class="text-right">
+            <a href="singlepost.html" class="text-right">
+                continue reading...
+            </a>
+        </p>
+
+        <hr>
+    </article>
+
+    <!-- Pager -->
+    <ul class="pager">
+        <li class="previous">
+            <a href="#">← Older</a>
+        </li>
+        <li class="next">
+            <a href="#">Newer →</a>
+        </li>
+    </ul>
+{% endblock %}
+

@@ -1,0 +1,73 @@
+{# src/Blogger/BlogBundle/Resources/views/layout.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block sidebar %}
+    <!-- Subscribe to my feed widget -->
+    <div class="well text-center">
+        <p class="lead">
+            Don't want to miss updates? Please click the below button!
+        </p>
+        <button class="btn btn-primary btn-lg">Subscribe to my feed</button>
+    </div>
+
+    <!-- Other widgets -->
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Latest Posts</h4>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item"><a href="singlepost.html">Headline 1</a></li>
+            <li class="list-group-item"><a href="singlepost.html">Headline 2</a></li>
+            <li class="list-group-item"><a href="singlepost.html">Headline 3</a></li>
+            <li class="list-group-item"><a href="singlepost.html">Headline 4</a></li>
+            <li class="list-group-item"><a href="singlepost.html">Headline 5</a></li>
+        </ul>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Categories</h4>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item"><a href="#">Category 1</a></li>
+            <li class="list-group-item"><a href="#">Category 2</a></li>
+            <li class="list-group-item"><a href="#">Category 3</a></li>
+            <li class="list-group-item"><a href="#">Category 4</a></li>
+            <li class="list-group-item"><a href="#">Category 5</a></li>
+        </ul>
+    </div>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Recent Comments</h4>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item"><a href="#">Comment 1 - <em>name 1</em></a></li>
+            <li class="list-group-item"><a href="#">Comment 2 - <em>name 2</em></a></li>
+            <li class="list-group-item"><a href="#">Comment 3 - <em>name 3</em></a></li>
+            <li class="list-group-item"><a href="#">Comment 4 - <em>name 4</em></a></li>
+        </ul>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Tags</h4>
+        </div>
+        <div class="panel-body">
+            <ul class="list-inline">
+                <li><a href="#">Tag 1</a></li>
+                <li><a href="#">Tag 2</a></li>
+                <li><a href="#">Tag 3</a></li>
+                <li><a href="#">Tag 4</a></li>
+                <li><a href="#">Tag 5</a></li>
+                <li><a href="#">Tag 6</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <p class="text-center">Copyright © 2015 Nick Dunn and <em>nickblog.vm.</em></p>
+{% endblock %}

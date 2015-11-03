@@ -1,0 +1,24 @@
+{# src/Blogger/BlogBundle/Resources/views/Page/contact.html.twig #}
+{% extends 'BloggerBlogBundle::layout.html.twig' %}
+
+{% block title %} - Contact{% endblock%}
+
+{% block body %}
+    <header>
+        <h1>Contact Nick</h1>
+    </header>
+
+    <p>Need to contact me? Please fill out the form below. I'll usually respond within three or four seconds.</p>
+
+    <form role="form" action="{{ path('BloggerBlogBundle_contact') }}" method="post" class="clearfix">
+        {% form_theme form 'bootstrap_3_layout.html.twig' %}
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </form>
+
+
+
+
+
+{% endblock %}
